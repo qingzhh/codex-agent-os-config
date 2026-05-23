@@ -1,0 +1,78 @@
+# Sanitized Codex config example.
+# Merge manually with your local ~/.codex/config.toml.
+# Do not copy machine-specific paths, auth files, logs, sessions, or sqlite state.
+
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+model_verbosity = "low"
+sandbox_mode = "workspace-write"
+approval_policy = "never"
+
+[sandbox_workspace_write]
+network_access = true
+
+[agents]
+max_threads = 4
+max_depth = 1
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."cloudflare@openai-curated"]
+enabled = true
+
+[plugins."superpowers@openai-curated"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[windows]
+sandbox = "elevated"
+
+# Project trust entries are machine-specific.
+# Add only your own local project paths.
+#
+# [projects.'D:\path\to\your\project']
+# trust_level = "trusted"
+
+[mcp_servers.context7]
+type = "stdio"
+command = "cmd"
+args = ["/c", "npx", "-y", "@upstash/context7-mcp"]
+
+[features]
+workspace_dependencies = true
+memories = true
+js_repl = false
+
+[memories]
+generate_memories = true
+use_memories = true
+disable_on_external_context = true
+
+[desktop]
+ambient-suggestions-enabled = true
+reviewDelivery = "inline"
+runCodexInWindowsSubsystemForLinux = false
+git-show-sidebar-pr-icons = true
+conversationDetailMode = "STEPS_COMMANDS"
+composerEnterBehavior = "enter"
+
+[desktop.open-in-target-preferences]
+global = "vscode"
+
+# Local Codex++ MCP servers are intentionally omitted because they include
+# machine-specific executable paths and environment variables.

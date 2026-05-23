@@ -1,0 +1,47 @@
+# Vault Memory Rules
+
+本目录是长期共享记忆区。
+
+目标：
+- 保存长期有效的信息
+- 让未来的 Codex 能快速接手工作
+- 降低 context rot
+- 降低重复分析成本
+
+允许记录：
+- 项目状态
+- TODO
+- decisions
+- checkpoints
+- workflows
+- profiles
+- lessons learned
+- 风险
+- blocker
+- 下一步
+
+禁止记录：
+- 长日志
+- 大段命令输出
+- 临时推理
+- 无意义聊天
+- 重复内容
+- 未验证结论
+- 构建产物
+- 大文件
+
+更新原则：
+- 有实质性新信息时再修改
+- 优先追加 checkpoint，而不是重写全文
+- 保持文件稳定、可读、低噪声
+- 记录决策时写清日期、背景、方案、最终决定、影响范围
+- 记录任务时写清状态、下一步、未决风险
+- 不要让单个项目的规则污染全局 Vault
+
+分层原则：
+- ~/.codex/AGENTS.md 管全局人格
+- D:\vault\profiles\ 管能力模板
+- D:\vault\projects\ 管项目状态
+- D:\vault\checkpoints\ 管阶段结果
+- D:\vault\decisions\ 管长期决策
+- D:\vault\lessons\ 管踩坑经验
