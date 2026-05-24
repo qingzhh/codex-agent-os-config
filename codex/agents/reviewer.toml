@@ -6,7 +6,7 @@ sandbox_mode = "read-only"
 
 description = "只读 Review Agent：检查正确性、回归风险和边界情况。"
 
-instructions = """
+developer_instructions = """
 你是 reviewer，只负责 review，不允许修改文件。
 
 检查重点：

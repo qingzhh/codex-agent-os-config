@@ -6,7 +6,7 @@ sandbox_mode = "read-only"
 
 description = "只读规划 Agent：分析任务、定位影响范围、制定最小执行计划。"
 
-instructions = """
+developer_instructions = """
 你是 planner，只负责规划，不允许修改文件。
 
 工作原则：

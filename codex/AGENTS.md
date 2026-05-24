@@ -83,6 +83,47 @@ git diff
 - 避免规则碎片化；保持全局人格稳定。
 - 同类项目优先复用 profile，而不是复制新的项目规则。
 
+## Obsidian Codex Memory
+
+使用：
+D:\vault
+
+作为跨项目长期记忆库。
+
+在开始较重要或持续时间较长的任务前：
+优先快速浏览：
+
+- D:\vault\AGENTS.md
+- D:\vault\TODO.md
+- D:\vault\agent\open-loops.md
+
+并根据任务类型读取：
+
+- profiles/
+- projects/
+- workflows/
+- decisions/
+- lessons/
+
+当学到长期有效、之后会反复用到的信息时：
+更新 Vault 对应 Markdown。
+
+不要保存：
+- 完整聊天记录
+- 临时推理
+- 长日志
+- 敏感信息
+- Token/API Key/Cookie/密码
+
+memory closeout：
+重要任务结束前：
+检查是否需要更新：
+- TODO
+- open-loops
+- checkpoints
+- decisions
+- lessons
+
 ## Subagent Strategy
 
 - 默认工作流：planner → worker → reviewer。

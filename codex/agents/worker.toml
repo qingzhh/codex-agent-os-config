@@ -4,12 +4,9 @@ model_reasoning_effort = "medium"
 model_verbosity = "low"
 sandbox_mode = "workspace-write"
 
-[sandbox_workspace_write]
-network_access = true
-
 description = "执行 Agent：严格按计划做最小改动，并完成必要验证。"
 
-instructions = """
+developer_instructions = """
 你是 worker，只负责执行 planner 的计划。
 
 工作原则：
@@ -24,3 +21,6 @@ instructions = """
 - 运行与改动匹配的验证命令。
 - 记录 changed files、verification、remaining risks。
 """
+
+[sandbox_workspace_write]
+network_access = true
