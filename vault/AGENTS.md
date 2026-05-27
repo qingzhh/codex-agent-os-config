@@ -42,9 +42,9 @@
 
 分层原则：
 - ~/.codex/AGENTS.md 管全局人格
-- D:\vault\profiles\ 管能力模板
-- D:\vault\projects\ 管项目状态
-- D:\vault\checkpoints\ 管阶段结果
-- D:\vault\decisions\ 管长期决策
-- D:\vault\lessons\ 管踩坑经验
-- D:\vault\workflows\ 管可复用流程
+- <YOUR_VAULT_ROOT>/profiles/ 管能力模板
+- <YOUR_VAULT_ROOT>/projects/ 管项目状态
+- <YOUR_VAULT_ROOT>/checkpoints/ 管阶段结果
+- <YOUR_VAULT_ROOT>/decisions/ 管长期决策
+- <YOUR_VAULT_ROOT>/lessons/ 管踩坑经验
+- <YOUR_VAULT_ROOT>/workflows/ 管可复用流程

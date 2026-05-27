@@ -1,30 +1,36 @@
-# Sanitized Codex config example.
-# Merge manually with your local ~/.codex/config.toml.
-# Do not copy machine-specific paths, auth files, logs, sessions, or sqlite state.
+# Codex config example.
+# Copy this file as a reference, then merge it into your own ~/.codex/config.toml.
+# Do not publish or copy auth.json, logs, sessions, sqlite files, cache, or local state.
 
+# Model defaults. Change these to whatever models your account can use.
 model = "gpt-5.5"
 model_reasoning_effort = "medium"
 model_verbosity = "low"
-sandbox_mode = "danger-full-access"
-approval_policy = "never"
+
+# Safer defaults for sharing. Increase permissions only after you understand the risk.
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
 
 [sandbox_workspace_write]
-network_access = true
+# Keep network off by default in shared templates. Enable only when a task needs it.
+network_access = false
 
+# Subagent limits. Keep max_depth shallow to avoid context bloat.
 [agents]
 max_threads = 3
 max_depth = 1
 
-[plugins."chrome@openai-bundled"]
-enabled = true
-
-[plugins."cloudflare@openai-curated"]
+# Plugin examples. Keep only plugins you actually use and have installed.
+[plugins."github@openai-curated"]
 enabled = true
 
 [plugins."superpowers@openai-curated"]
 enabled = true
 
-[plugins."github@openai-curated"]
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
 enabled = true
 
 [plugins."documents@openai-primary-runtime"]
@@ -36,27 +42,29 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
-[plugins."browser@openai-bundled"]
-enabled = true
-
+# Windows desktop users can usually start with unelevated.
 [windows]
-sandbox = "elevated"
+sandbox = "unelevated"
 
-# Project trust entries are machine-specific.
-# Add only your own local project paths.
+# Project trust entries are local-machine specific.
+# Add only your own paths after reviewing them.
 #
-# [projects.'D:\path\to\your\project']
+# [projects.'C:\path\to\your\project']
 # trust_level = "trusted"
 
+# General MCP example that does not contain local machine paths.
+# Requires Node.js / npx on PATH.
 [mcp_servers.context7]
 type = "stdio"
 command = "cmd"
 args = ["/c", "npx", "-y", "@upstash/context7-mcp"]
 
 [features]
+hooks = true
 workspace_dependencies = true
 memories = true
 js_repl = false
+chronicle = false
 
 [memories]
 generate_memories = true
@@ -74,5 +82,11 @@ composerEnterBehavior = "enter"
 [desktop.open-in-target-preferences]
 global = "vscode"
 
-# Local Codex++ MCP servers are intentionally omitted because they include
-# machine-specific executable paths and environment variables.
+# Optional high-permission personal mode.
+# Uncomment only on a machine you fully control.
+#
+# sandbox_mode = "danger-full-access"
+# approval_policy = "never"
+#
+# Local Codex++ / desktop MCP servers are intentionally omitted because they
+# usually contain executable paths, environment variables, and machine IDs.

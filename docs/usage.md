@@ -6,8 +6,8 @@
 请按我的 Codex Agent OS 执行本任务。
 
 使用：
-- Profile: D:\vault\profiles\codex-workflow.md
-- Project State: D:\vault\projects\project-template.md
+- Profile: <YOUR_VAULT_ROOT>/profiles/codex-workflow.md
+- Project State: <YOUR_VAULT_ROOT>/projects/project-template.md
 
 要求：
 - planner 作为 workflow manager 判断复杂度
@@ -21,13 +21,28 @@
 - 输出中文、简洁
 ```
 
+## 让 Codex 自动配置
+
+把下面内容复制给 Codex：
+
+```text
+请根据 https://github.com/qingzhh/codex-agent-os-config 配置我的 Codex Agent OS。
+
+先备份我本机已有的 ~/.codex/AGENTS.md、~/.codex/config.toml 和 ~/.codex/agents/。
+安装 codex/AGENTS.md 和 codex/agents/*.toml。
+config.toml 只参考 codex/config.example.toml 合并，不要直接覆盖。
+任何本机路径、project trust、高权限 sandbox、MCP 本地命令都必须先让我确认。
+不要复制 auth.json、日志、session、sqlite、cache 或凭据。
+完成后验证 TOML 可解析，并报告 changed files / verification / risks。
+```
+
 ## Profile 选择
 
-- 字幕任务：`D:\vault\profiles\subtitle-workflow.md`
-- 前端 React：`D:\vault\profiles\frontend-react.md`
-- Python 研究：`D:\vault\profiles\python-research.md`
-- MCP 开发：`D:\vault\profiles\mcp-dev.md`
-- Codex 工作流：`D:\vault\profiles\codex-workflow.md`
+- 字幕任务：`<YOUR_VAULT_ROOT>/profiles/subtitle-workflow.md`
+- 前端 React：`<YOUR_VAULT_ROOT>/profiles/frontend-react.md`
+- Python 研究：`<YOUR_VAULT_ROOT>/profiles/python-research.md`
+- MCP 开发：`<YOUR_VAULT_ROOT>/profiles/mcp-dev.md`
+- Codex 工作流：`<YOUR_VAULT_ROOT>/profiles/codex-workflow.md`
 
 ## 记忆写入规则
 
